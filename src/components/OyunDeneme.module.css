@@ -1,0 +1,102 @@
+.startGame {
+    background-color: #8d0707;
+    color: rgb(219, 201, 34);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.startGame:hover {
+    transform: scale(1.05);
+}
+.baslik  {
+     font-size: 64px;
+     text-align: center;
+     font-weight: bold;
+     background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     transition: transform 0.3s ease;
+ }
+
+ .baslik:hover {
+     transform: scale(1.05);
+ }
+
+ .click {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+        color: white;
+        font-size: 18px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(166, 119, 227, 0.4);
+        transition: all 0.3s ease;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .click:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(166, 119, 227, 0.6);
+    }
+    
+    .click:active {
+        transform: scale(0.97);
+        box-shadow: 0 2px 8px rgba(166, 119, 227, 0.2);
+    }
+        .bitisMesaji {
+            color: crimson;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+    
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.isim {
+    padding: 10px 16px;
+    margin: 8px;
+    width: 220px;
+    font-size: 16px;
+    border: 2px solid #dacc15;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+}
+
+.isim:focus {
+    border-color: #ac0d0d;
+    box-shadow: 0 0 6px rgba(110, 142, 251, 0.4);
+}
+
+
+.score {
+    background: linear-gradient(135deg, #bbbcc0, #a88ace);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    min-width: 120px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.score:hover {
+    transform: translateY(-4px);
+}
