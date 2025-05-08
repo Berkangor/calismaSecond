@@ -113,3 +113,26 @@
     color: #e74c3c;
     margin-top: 20px;
 }
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.pointer {
+    display: inline-block;
+    animation: bounce 0.2s infinite;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    color: #29cacf;
+}
+
+.pointer:hover {
+    transform: scale(1.2);
+}

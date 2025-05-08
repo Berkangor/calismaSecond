@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import css from './OyunDeneme.module.css';
+import { FaGithub } from "react-icons/fa";
+import { FaHandPointer } from "react-icons/fa";
 
 
 function OyunDeneme() {
@@ -75,7 +77,8 @@ function OyunDeneme() {
 
   return (
     <div className={css.scoreContainer} style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1 className={css.baslik}>Click Game</h1>
+      
+      <h1 className={css.baslik}> Click Game < FaHandPointer className={css.pointer} /> </h1>
       <p className={css.score}>Score: {score}</p>
       <p className={css.score}>High Score: {highScore}</p>
       <p className={css.score}>Time Left: {timeLeft}</p>
@@ -115,10 +118,18 @@ function OyunDeneme() {
 
         </>
       )}
-      <br /><br />
       <button className={css.startGame} onClick={startGame}
-      disabled={isActive || preCountdown !== null}>Start Game</button>
-
+        disabled={isActive || preCountdown !== null}>Start Game</button>
+      <br/><br/><br/><br/>
+      <a
+        href="https://github.com/Berkangor/calismaSecond"
+        target="_blank"
+        rel="noreferrer"
+        style={{ textDecoration: "none", color: "black", fontSize:"0.7rem" }}
+      >
+        <FaGithub size={20} color="#333" />  by Berkan Görmüş
+      </a>
+      
     </div>
 
       
