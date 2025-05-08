@@ -119,7 +119,7 @@ function OyunDeneme() {
         </>
         
       )}
-      <br/>
+      <br/><br/>
       <button className={css.startGame} onClick={startGame}
         disabled={isActive || preCountdown !== null}>Start Game</button>
       <br/><br/>
