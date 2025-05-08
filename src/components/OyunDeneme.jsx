@@ -11,6 +11,9 @@ function OyunDeneme() {
   const [surname, setSurname] = useState("");
   const [isStarted, setIsStarted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [preCountdown, setPreCountdown] = useState(null);
+
+
 
 
   // Sayfa yüklenince localStorage'dan en yüksek skoru al
@@ -46,13 +49,28 @@ function OyunDeneme() {
     if (isActive) setScore((s) => s + 1);
   };
 
-  const startGame = () => {
-    if (name.trim() === "" || surname.trim() === "") return alert("İsim ve soyisim girin");
+   const startGame = () => {
+     if (name.trim() === "" || surname.trim() === "") return alert("İsim ve soyisim girin");
     setScore(0);
-    setTimeLeft(10);
-    setIsActive(true);
     setIsStarted(true);
     setIsFinished(false);
+    setTimeLeft(10);
+    setPreCountdown(3);
+  
+
+     const countdownInterval = setInterval(() => {
+       setPreCountdown((prev) => {
+        if (prev === 1) {
+          clearInterval(countdownInterval);
+          setTimeLeft(10);
+          setPreCountdown(null);
+          setIsActive(true);
+          return null;
+         }
+         return prev - 1;
+       });
+
+     }, 1000);
   };
 
   return (
@@ -86,6 +104,9 @@ function OyunDeneme() {
               )}
               {isStarted && (
         <>
+          {preCountdown !== null && (
+            <p className={css.geriSayim}>🎯Başlıyor: {preCountdown}</p>
+          )}
           {!isActive && (
             <p className={css.score}>{name} {surname}, skorun: {score}</p>
             
@@ -95,7 +116,8 @@ function OyunDeneme() {
         </>
       )}
       <br /><br />
-          <button className={css.startGame} onClick={startGame}>Start Game</button>
+      <button className={css.startGame} onClick={startGame}
+      disabled={isActive || preCountdown !== null}>Start Game</button>
 
     </div>
 
