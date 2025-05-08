@@ -117,10 +117,12 @@ function OyunDeneme() {
         {isFinished && <p className={css.bitisMesaji}>⏰ Süre bitti!</p>}
 
         </>
+        
       )}
+      <br/>
       <button className={css.startGame} onClick={startGame}
         disabled={isActive || preCountdown !== null}>Start Game</button>
-      <br/><br/><br/><br/>
+      <br/><br/>
       <a
         href="https://github.com/Berkangor/calismaSecond"
         target="_blank"
